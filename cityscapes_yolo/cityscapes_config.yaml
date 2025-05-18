@@ -1,0 +1,4 @@
+﻿train: ./images/train
+val: ./images/val
+nc: 2 # Número de classes
+names: ['car', 'pedestrian'] # DEVE CORRESPONDER AOS yolo_id: 0='car', 1='pedestrian'
