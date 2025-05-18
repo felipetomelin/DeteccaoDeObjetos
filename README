@@ -1,13 +1,40 @@
+# Detecção e Contagem de Fluxo de Movimentação Urbana com YOLO
 
-README and scripts
-------------------
+Este projeto tem como objetivo desenvolver e implementar um sistema de visão computacional para detectar e contar objetos em movimento (especificamente **Cars** e **Pedestrians**) em cenas urbanas. Utiliza o modelo YOLO (You Only Look Once) treinado no dataset Cityscapes para análise de fluxo de movimentação.
 
-The README and various scripts for inspection, preparation, and evaluation can be found in our git repository:
-https://github.com/mcordts/cityscapesScripts
+## Objetivos
 
-Contact
--------
+-   Selecionar e preparar um dataset público de movimentação urbana (Cityscapes).
+-   Converter anotações de segmentação de instância para o formato de bounding box compatível com YOLO.
+-   Treinar um modelo YOLO para detectar duas classes específicas: **Cars** e **Pedestrians**.
+-   Implementar um script para realizar a inferência em imagens e vídeos, incluindo a contagem dos objetos detectados.
+-   Analisar os resultados e discutir as limitações e potencialidades da solução.
 
-Marius Cordts, Mohamed Omran
-www.cityscapes-dataset.net
-mail@cityscapes-dataset.net
+## Dataset Utilizado
+
+-   **Nome:** Cityscapes Dataset
+-   **Descrição:** Dataset em larga escala que contém um conjunto diversificado de imagens estéreo de cenas de rua de 50 cidades diferentes, com anotações de alta qualidade para 5.000 quadros (gtFine) e anotações grosseiras para 20.000 quadros.
+-   **Arquivos Utilizados:**
+    -   `leftImg8bit_trainvaltest.zip`: Imagens RGB.
+    -   `gtFine_trainvaltest.zip`: Anotações de segmentação de instância (`_instanceIds.png`).
+
+## Modelo e Arquitetura
+
+-   **Modelo:** YOLO (You Only Look Once)
+-   **Versão Específica:** [YOLOv8n, YOLOv5s] da Ultralytics.
+-   **Transferência de Aprendizado:** O treinamento partiu de pesos pré-treinados no dataset COCO para acelerar a convergência e melhorar o desempenho.
+
+## Tecnologias e Ferramentas
+
+-   **Linguagem de Programação:** Python 3.x
+-   **Framework de Deep Learning:** PyTorch (via Ultralytics YOLO)
+-   **Principais Bibliotecas:**
+    -   `ultralytics`: Para treinamento e inferência com YOLO.
+    -   `OpenCV (cv2)`: Para processamento de imagem e vídeo.
+    -   `NumPy`: Para operações numéricas.
+    -   `scikit-image`: Para auxílio na conversão de anotações.
+    -   `pafy`, `yt-dlp`: Para processamento de URLs do YouTube.
+
+## Video 1 Conf. 0.4:  https://youtu.be/41CSixYNt0g
+## Video 2 Conf. 0.25: https://youtu.be/uQsExywDINc
+## Video 2 Conf. 0.4: 	https://youtu.be/9eGaULgP3-U
